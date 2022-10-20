@@ -1,16 +1,10 @@
-# Nx Serverless - Project Structure
+# Nx Serverless - Generators
 
-Create two folders in the base folder called services and libs.
+Use the following command to create a generator.
 
-Create a folder called books inside the serverless folder.
-
-Paste the provided serverless.yml file and the handler.
-
-Create a folder called books inside the libs folder.
-
-paste the provided index.ts file.
-
-Paste the provided serverless.yml file.
+```bash
+nx g @nrwl/workspace:workspace-generator service-generator
+```
 
 ## License
 
