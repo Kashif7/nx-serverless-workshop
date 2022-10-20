@@ -56,7 +56,7 @@
       "outputs": ["{options.outputFile}"],
 
       "options": {
-        "lintFilePatterns": ["services/auth/**/*.ts"]
+        "lintFilePatterns": ["services/books/*.ts"]
       }
     },
 

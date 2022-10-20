@@ -1,0 +1,339 @@
+{
+  "root": true,
+
+  "ignorePatterns": ["**/*"],
+
+  "plugins": ["@nrwl/nx"],
+
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+
+      "rules": {
+        "@nrwl/nx/enforce-module-boundaries": [
+          "error",
+
+          {
+            "enforceBuildableLibDependency": true,
+
+            "allow": [],
+
+            "depConstraints": [
+              {
+                "sourceTag": "*",
+
+                "onlyDependOnLibsWithTags": ["*"]
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "files": ["*.ts", "*.tsx"],
+
+      "extends": ["plugin:@nrwl/nx/typescript"],
+
+      "rules": {
+        "max-lines": [
+          "error",
+
+          { "max": 750, "skipComments": true, "skipBlankLines": true }
+        ],
+
+        "max-lines-per-function": [
+          "error",
+
+          { "max": 200, "skipComments": true, "skipBlankLines": true }
+        ],
+
+        "@typescript-eslint/class-literal-property-style": ["error", "getters"],
+
+        "comma-dangle": "off",
+
+        "@typescript-eslint/comma-dangle": ["error"],
+
+        "comma-spacing": "off",
+
+        "@typescript-eslint/comma-spacing": ["error"],
+
+        "default-param-last": "off",
+
+        "@typescript-eslint/default-param-last": ["error"],
+
+        "no-return-await": "off",
+
+        "@typescript-eslint/return-await": "error",
+
+        "no-use-before-define": "off",
+
+        "@typescript-eslint/no-use-before-define": ["error"],
+
+        "no-unused-vars": "off",
+
+        "@typescript-eslint/no-unused-vars": ["error"],
+
+        "no-unused-expressions": "off",
+
+        "@typescript-eslint/no-unused-expressions": ["error"],
+
+        "no-throw-literal": "off",
+
+        "@typescript-eslint/no-throw-literal": ["error"],
+
+        "no-invalid-this": "off",
+
+        "@typescript-eslint/no-invalid-this": ["error"],
+
+        "no-loop-func": "off",
+
+        "@typescript-eslint/no-loop-func": ["error"],
+
+        "@typescript-eslint/consistent-indexed-object-style": [
+          "error",
+
+          "record"
+        ],
+
+        "@typescript-eslint/consistent-type-assertions": [
+          "error",
+
+          {
+            "assertionStyle": "as",
+
+            "objectLiteralTypeAssertions": "never"
+          }
+        ],
+
+        "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+
+        "@typescript-eslint/consistent-type-exports": [
+          "error",
+
+          {
+            "fixMixedExportsWithInlineTypeSpecifier": true
+          }
+        ],
+
+        "@typescript-eslint/consistent-type-imports": [
+          "error",
+
+          {
+            "prefer": "type-imports",
+
+            "disallowTypeAnnotations": true
+          }
+        ],
+
+        "@typescript-eslint/explicit-function-return-type": ["error"],
+
+        "@typescript-eslint/explicit-member-accessibility": ["error"],
+
+        "@typescript-eslint/restrict-template-expressions": [
+          "error",
+
+          {
+            "allowNumber": true,
+
+            "allowBoolean": true
+          }
+        ],
+
+        "@typescript-eslint/sort-type-union-intersection-members": ["error"],
+
+        "@typescript-eslint/strict-boolean-expressions": ["error"],
+
+        "@typescript-eslint/switch-exhaustiveness-check": ["warn"],
+
+        "@typescript-eslint/prefer-reduce-type-parameter": ["warn"],
+
+        "@typescript-eslint/prefer-nullish-coalescing": ["warn"],
+
+        "@typescript-eslint/prefer-enum-initializers": ["warn"],
+
+        "@typescript-eslint/no-unnecessary-type-constraint": ["warn"],
+
+        "@typescript-eslint/no-unnecessary-type-assertion": ["warn"],
+
+        "@typescript-eslint/no-unnecessary-type-arguments": ["warn"],
+
+        "@typescript-eslint/no-require-imports": ["warn"],
+
+        "@typescript-eslint/no-redundant-type-constituents": ["warn"],
+
+        "@typescript-eslint/no-non-null-assertion": ["error"],
+
+        "@typescript-eslint/quotes": ["error", "single"],
+
+        "@typescript-eslint/promise-function-async": ["error"],
+
+        "@typescript-eslint/no-useless-empty-export": ["error"],
+
+        "@typescript-eslint/no-unsafe-return": ["error"],
+
+        "@typescript-eslint/no-unsafe-call": ["error"],
+
+        "@typescript-eslint/no-floating-promises": ["error"],
+
+        "no-redeclare": "off",
+
+        "@typescript-eslint/no-redeclare": [
+          "error",
+
+          {
+            "ignoreDeclarationMerge": true
+          }
+        ],
+
+        "@typescript-eslint/prefer-readonly": [
+          "error",
+
+          { "onlyInlineLambdas": true }
+        ],
+
+        // naming convention rules
+
+        "@typescript-eslint/naming-convention": [
+          "error",
+
+          {
+            "selector": "variable",
+
+            "format": ["camelCase", "UPPER_CASE"]
+          },
+
+          {
+            "selector": "function",
+
+            "format": ["camelCase"]
+          },
+
+          {
+            "selector": "parameter",
+
+            "format": ["camelCase"]
+          },
+
+          // {
+
+          //   "selector": "objectLiteralProperty",
+
+          //   "format": ["camelCase"]
+
+          // },
+
+          {
+            "selector": "class",
+
+            "format": ["PascalCase"]
+          },
+
+          {
+            "selector": "classProperty",
+
+            "format": ["camelCase"]
+          },
+
+          {
+            "selector": "classMethod",
+
+            "format": ["camelCase"]
+          },
+
+          {
+            "selector": "interface",
+
+            "format": ["PascalCase"]
+          },
+
+          {
+            "selector": "enum",
+
+            "format": ["PascalCase"]
+          },
+
+          {
+            "selector": "enumMember",
+
+            "format": ["camelCase"]
+          },
+
+          {
+            "selector": "typeAlias",
+
+            "format": ["PascalCase"]
+          },
+
+          {
+            "selector": "typeProperty",
+
+            "format": ["camelCase"]
+          },
+
+          {
+            "selector": "typeMethod",
+
+            "format": ["camelCase"]
+          },
+
+          {
+            "selector": "variable",
+
+            "types": ["boolean"],
+
+            "format": ["PascalCase"],
+
+            "prefix": [
+              "is",
+
+              "are",
+
+              "was",
+
+              "were",
+
+              "should",
+
+              "has",
+
+              "had",
+
+              "can",
+
+              "did",
+
+              "does",
+
+              "will"
+            ]
+          },
+
+          {
+            "selector": "typeParameter",
+
+            "format": ["PascalCase"],
+
+            "prefix": ["T"]
+          },
+
+          {
+            "selector": "variable",
+
+            "modifiers": ["destructured"],
+
+            "format": null
+          }
+        ]
+      }
+    },
+
+    {
+      "files": ["*.js", "*.jsx"],
+
+      "extends": ["plugin:@nrwl/nx/javascript"],
+
+      "rules": {}
+    }
+  ]
+}
