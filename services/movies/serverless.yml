@@ -1,0 +1,20 @@
+service: movies-service
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+
+plugins:
+  - serverless-bundle
+  - serverless-offline
+
+functions:
+  getMovies:
+    handler: getMovies.handler
+    events:
+      - http:
+          path: /movies
+          method: GET
+          cors: true
