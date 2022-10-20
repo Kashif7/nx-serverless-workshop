@@ -10,6 +10,8 @@
     "@nrwl/nx-cloud": "latest",
     "@nrwl/workspace": "15.0.0",
     "nx": "15.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.40.1",
+    "eslint": "^8.25.0",
     "prettier": "^2.6.2",
     "serverless-bundle": "^5.5.0",
     "serverless-offline": "^11.1.3",
